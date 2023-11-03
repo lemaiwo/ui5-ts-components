@@ -1,0 +1,132 @@
+{
+    "_version": "1.58.0",
+    "sap.app": {
+        "id": "be.wl.app2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.11.2",
+            "toolsId": "2c8e36a5-424d-440d-86ad-1e8de215abb3"
+        },
+		"crossNavigation": {
+			"inbounds": {
+				"app1": {
+					"signature": {
+						"parameters": {},
+						"additionalParameters": "allowed"
+					},
+					"semanticObject": "demo",
+					"action": "parent",
+					"title": "Parent app",
+					"subTitle": "Demo",
+					"icon": "sap-icon://sap-ui5"
+				}
+			}
+		}
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "componentUsages": {
+            "app1": {
+                "name": "be.wl.app1",
+                "settings": {},
+                "componentData": {},
+                "lazy": false
+            }
+        },
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.119.2",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "be.wl.app2.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "be.wl.app2.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteMain",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetMain"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Main",
+                    "viewName": "Main"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "be.wl.app2.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "bewlapp2"
+    }
+}

@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="be.wl.app1.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <IllustratedMessage
+                title="App 1"
+                description="App 1"
+            />
+        </content>
+    </Page>
+</mvc:View>

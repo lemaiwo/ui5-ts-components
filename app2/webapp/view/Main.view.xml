@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="be.wl.app2.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <IllustratedMessage
+                title="App 2"
+                description="App 2"
+            />
+            <core:ComponentContainer usage="app1" async="true" />
+        </content>
+    </Page>
+</mvc:View>
